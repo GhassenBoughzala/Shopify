@@ -47,11 +47,14 @@
     </header>
 
     <!-- slider Area Start-->
-    <div class="slider-area ">
+    <div class="slider-area " >
         <!-- Mobile Menu -->
         
     <!--================login_part Area =================-->
-    <section class="ftco-section">
+    <section class="ftco-section" >
+    <div class="bg-img">
+
+        
 		<div class="container">
 			
 			<div class="row justify-content-center">
@@ -67,32 +70,29 @@
 			      	</div>
 			    <form class="signin-form"  method="POST" action="connexion2.php">
 			      		<div class="form-group mt-3">
-			      			<input type="email" class="form-control" name="login" id="login">
+			      			<input type="email" class="form-control" name="login" id="login" required>
 			      			<label class="form-control-placeholder" for="username">Email</label>
 			      		</div>
 
                         <div class="form-group">
-                            <input id="password-field" type="password" class="form-control" type="password" name="pwd" id="pwd">
+                            <input id="password-field" type="password" class="form-control" type="password" name="pwd" id="pwd" required>
                             <label class="form-control-placeholder" for="password">Password</label>
                             <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
 
                         <div class="form-group">
                             <button type="submit" name="Valider" class="form-control btn btn-blue rounded submit px-3">Login</button>
-                            <script>console.log("Hello world!"); </script>
-                        </div>      
+                        </div> 
+                        <a class="form-control btn btn-sm btn-info rounded " href="index.php">Back</a>     
 		      </form>
-
                 <br>
-                <div class="form-group">  
-                <a class="form-control btn btn-sm btn-info rounded " href="index.php">Back</a>    
-                </div>
-		          
+                <a href="signup.html" style="text-align: center; color:#212529">or Create an account  </a>
 		        </div>
 		      </div>
 				</div>
 			</div>
 		</div>
+    </div>
 	</section>
 
   <script src="assets/login/js/jquery.min.js"></script>

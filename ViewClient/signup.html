@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sign in </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/application/favicons/site.webmanifest" crossorigin="use-credentials">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="assets/login/css/style.css">
+
+    <!-- CSS here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/flaticon.css">
+        <link rel="stylesheet" href="assets/css/slicknav.css">
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/themify-icons.css">
+        <link rel="stylesheet" href="assets/css/slick.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    
+    <header>
+        <!-- Header Start -->
+       <div class="header-area">
+            <div class="main-header ">
+                
+               
+                
+            </div>
+       </div>
+        <!-- Header End -->
+    </header>
+
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        
+    <!--================login_part Area =================-->
+    <section class="ftco-section"  style="background-image: url(assets/login/images/milky2.jpg);">
+		<div class="container">
+			
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="wrap">
+						
+						<div class="login-wrap p-4 p-md-5">
+			      	<div class="d-flex">
+			      		<div class="w-100">
+			      			<h3 class="mb-4">Sign up</h3>
+                            <p>Create your own account </p>
+			      		</div>
+								
+			      	</div>
+			    <form class="signin-form"  method="POST" action="./Client/ajouterClient.php">
+			      		<div class="form-group mt-3">
+			      			<input type="text" class="form-control" name="nom" id="nom" required>
+			      			<label class="form-control-placeholder" for="nom">Name</label>
+			      		</div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="prenom" id="prenom" required>
+                            <label class="form-control-placeholder" for="prenom">Last Name</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input class="form-control"  type="number" name="age" id="age" required>
+                            <label class="form-control-placeholder" for="age">Age</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="sexe" id="sexe" required>
+                            <label class="form-control-placeholder" for="sexe">Gender</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input class="form-control"  type="text" name="adresse" id="adresse" required>
+                            <label class="form-control-placeholder" for="adresse">Adresse</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input class="form-control"  type="email" name="email" id="email" required>
+                            <label class="form-control-placeholder" for="email">E-mail</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input id="password-field" type="password" class="form-control" type="password" name="mdp" id="pwd" required>
+                            <label class="form-control-placeholder" for="password">Password</label>
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" name="Valider" class="form-control btn btn-blue rounded submit px-3">Confirm</button>
+                        </div>  
+                        <a class="form-control btn btn-sm btn-info rounded " href="index.php">Back</a>     
+		      </form>
+
+		          
+		        </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+  <script src="assets/login/js/jquery.min.js"></script>
+  <script src="assets/login//js/popper.js"></script>
+  <script src="assets/login//js/bootstrap.min.js"></script>
+  <script src="assets/login//js/main.js"></script>
+    <!--================login_part end =================-->
+
+        </div>
+    </div>
+    <!-- slider Area End-->
+
+</body>
+    
+</html>

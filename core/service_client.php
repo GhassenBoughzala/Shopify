@@ -1,6 +1,7 @@
 <?PHP
 class service_client {
-function afficher ($client){
+
+    function afficher ($client){
         echo "identifiant: ".$client->getId()."<br>";
         echo "Nom: ".$client->getNom()."<br>";
         echo "Prénom: ".$client->getPrenom()."<br>";
@@ -13,7 +14,7 @@ function afficher ($client){
     }
     
     function ajouter($client){
-        $sql="INSERT INTO client (nom,prenom,age,sexe,mdp,email,fidelite,adresse) VALUES (:nom, :prenom,:age,:sexe,:mdp,:email,:fidelite,:adresse)";
+        $sql="INSERT INTO client (nom,prenom,age,sexe,adresse,email,mdp) VALUES (:nom, :prenom,:age,:sexe,:adresse,:email,:mdp)";
         $db = config::getConnexion();
         try{
         $req=$db->prepare($sql);
@@ -26,7 +27,7 @@ function afficher ($client){
         $adresse=$client->getAdresse();
         $email=$client->getEmail();
         $mdp=$client->getMdp();
-        $fidelite=$client->getFidelite();
+        
 
  
         $req->bindValue(':nom',$nom);
@@ -36,11 +37,10 @@ function afficher ($client){
         $req->bindValue(':adresse',$adresse);
         $req->bindValue(':email',$email);
         $req->bindValue(':mdp',$mdp);
-        $req->bindValue(':fidelite',$fidelite);
+       
                
         
             $req->execute();
-           header('Location: afficher.php');
         }
         catch (Exception $e){
             echo 'Erreur: '.$e->getMessage();
@@ -93,9 +93,6 @@ function afficher ($client){
         
     }
 
-
-
-   
   
     function afficherClient(){
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
@@ -109,6 +106,7 @@ function afficher ($client){
             die('Erreur: '.$e->getMessage());
         }   
     }
+
     function afficherClientFront($client){
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
         $sql="SElECT * From client where email='$client'";
@@ -121,6 +119,7 @@ function afficher ($client){
             die('Erreur: '.$e->getMessage());
         }   
     }
+
     function afficherCarte($client){
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
         $sql="SElECT * From fidelite where client='$client'";
@@ -133,6 +132,7 @@ function afficher ($client){
             die('Erreur: '.$e->getMessage());
         }   
     }
+
     function selectcommande($client){
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
         $sql="SElECT count(*) as commande  From orders where client_id='$client'";
@@ -159,12 +159,13 @@ function afficher ($client){
             die('Erreur: '.$e->getMessage());
         }
     }
+
    function modifier($client,$ID){
-        $sql="UPDATE client SET  nom=:nom,prenom=:prenom,age=:age,sexe=:sexe,adresse=:adresse,email=:email,mdp=:mdp,fidelite=:fidelite WHERE ID=:ID";
+        $sql="UPDATE client SET  nom=:nom,prenom=:prenom,age=:age,sexe=:sexe,adresse=:adresse,email=:email,mdp=:mdp WHERE ID=:ID";
         
         $db = config::getConnexion();
         //$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-try{        
+    try{        
         $req=$db->prepare($sql);
         $nom=$client->getNom();
         $prenom=$client->getPrenom();
@@ -173,8 +174,8 @@ try{
         $adresse=$client->getAdresse();
         $email=$client->getEmail();
         $mdp=$client->getMdp();
-        $fidelite=$client->getFidelite();
-        $datas = array(':ID'=>$ID,':nom'=>$nom,':prenom'=>$prenom,':age'=>$age,':sexe'=>$sexe,':adresse'=>$adresse,':email'=>$email,':mdp'=>$mdp,':fidelite'=>$fidelite);
+        
+        $datas = array(':ID'=>$ID,':nom'=>$nom,':prenom'=>$prenom,':age'=>$age,':sexe'=>$sexe,':adresse'=>$adresse,':email'=>$email,':mdp'=>$mdp);
         $req->bindValue(':ID',$ID);
         $req->bindValue(':nom',$nom);
         $req->bindValue(':prenom',$prenom);
@@ -192,11 +193,12 @@ try{
         }
         catch (Exception $e){
             echo " Erreur ! ".$e->getMessage();
-   echo " Les datas : " ;
-  print_r($datas);
+            echo " Les datas : " ;
+            print_r($datas);
         }
         
     }
+
     function recuperer($ID){
         $sql="SELECT * from client where ID=$ID";
         $db = config::getConnexion();
@@ -223,7 +225,8 @@ try{
 
 
 
-        function pointfidelite($clientc){
+    function pointfidelite($clientc){
+
     $db=config::getConnexion();
     $point=0;
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
