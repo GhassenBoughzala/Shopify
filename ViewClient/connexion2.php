@@ -27,8 +27,8 @@ if (!empty($_POST['login']) && !empty($_POST['pwd'])){
 
 		
 		}
-		if($_SESSION['l']=="admin@gmail.com" && $_SESSION['p']=="0000"){
-		header("location:../ViewsAdmin/index.html");
+		if($_SESSION['l']=="shopify@gmail.com" && $_SESSION['p']=="4567"){
+		header("location:../ViewAdmin");
 		}
 	
 }

@@ -43,7 +43,7 @@ function afficherProduit ($produit){
 	}
 	
 	function afficherProduits(){
-		$sql="SELECT categories.leb_cat,produit.idp,produit.lib_prod,produit.prix,produit.image,produit.description,produit.qte_prod FROM produit,categories WHERE produit.id=categories.id_cat";
+		$sql="SELECT produit.idp,produit.lib_prod,produit.prix,produit.image,produit.description,produit.qte_prod FROM produit ";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
