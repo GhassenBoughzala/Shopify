@@ -8,10 +8,10 @@ class Produit{
 	private $image;
 	private $description;
 
-	function __construct($idp,$lib_prod,$id,$prix,$qte_prod,$image,$description){
+	function __construct($idp,$lib_prod,$prix,$qte_prod,$image,$description){
 		$this->idp=$idp;
 		$this->lib_prod=$lib_prod;
-		$this->id=$id;
+		//$this->id=$id;
 		$this->prix=$prix;
 		$this->qte_prod=$qte_prod;
 		$this->image=$image;

@@ -27,7 +27,7 @@
     ?>
         <div class="card">
         <div class="card-header">
-        <h2 class="card-title">Products</h2>
+        <h2 class="card-title">Clients List </h2>
         <div class="heading-elements">
             <ul class="list-inline mb-0">
                 <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -40,14 +40,13 @@
 
         <table class="table">
         <tr>
-        <th>nom</th>
-        <th>prenom</th>
-        <th>identifiant</th>
-        <th>fidelite</th>
-        <th>sexe</th>
-        <th>email</th>
-        <th>adresse</th>
-        <th>fidelite</th>
+        <th>First Name</th>
+        <th>Last Name</th>        
+        <th>Age</th>
+        <th>Sexe</th>
+        <th>E-mail</th>
+        <th>Adresse</th>
+        
 
         </tr>
 
@@ -57,12 +56,11 @@
             <tr>
             <td><?PHP echo $row['nom']; ?></td>
             <td><?PHP echo $row['prenom']; ?></td>
-            <td><?PHP echo $row['identifiant']; ?></td>
             <td><?PHP echo $row['age']; ?></td>
-        <td><?PHP echo $row['sexe']; ?></td>
+            <td><?PHP echo $row['sexe']; ?></td>
             <td><?PHP echo $row['email']; ?></td>
-        <td><?PHP echo $row['adresse']; ?></td>
-            <td><?PHP echo $row['fidelite']; ?></td>
+            <td><?PHP echo $row['adresse']; ?></td>
+            
 
             </tr>
                 <?PHP

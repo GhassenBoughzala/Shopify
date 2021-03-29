@@ -47,52 +47,6 @@ class service_client {
         }
         
     }
-    function ajoutercinq($client){
-        $sql="Replace INTO fidelite(client, reduction,type_fidelite) VALUES ('$client',:point,:type)";
-        $db = config::getConnexion();
-        try{
-        $req=$db->prepare($sql);
-        $req->bindValue(':point',5);
-        $req->bindValue(':type',"bronze");
-            $req->execute();
-           
-        }
-        catch (Exception $e){
-            echo 'Erreur: '.$e->getMessage();
-        }
-        
-    }
-  function ajouterdix($client){
-        $sql="Replace INTO fidelite(client, reduction,type_fidelite) VALUES ('$client',:point,:type)";
-        $db = config::getConnexion();
-        try{
-        $req=$db->prepare($sql);
-        $req->bindValue(':point',10);
-        $req->bindValue(':type',"silver");
-            $req->execute();
-           
-        }
-        catch (Exception $e){
-            echo 'Erreur: '.$e->getMessage();
-        }
-        
-    }
-    function ajoutervingt($client){
-        $sql="Replace INTO fidelite(client, reduction,type_fidelite) VALUES ('$client',:point,:type)";
-        $db = config::getConnexion();
-        try{
-        $req=$db->prepare($sql);
-        $req->bindValue(':point',20);
-        $req->bindValue(':type',"gold");
-            $req->execute();
-           
-        }
-        catch (Exception $e){
-            echo 'Erreur: '.$e->getMessage();
-        }
-        
-    }
-
   
     function afficherClient(){
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";

@@ -82,8 +82,9 @@
                   <h5>Adresse:  <?php echo $row['adresse']; ?></h5>
             <?php }?>
                   <input type="hidden" value="<?PHP echo $row['identifiant']; ?>" name="identifiant">
+                  
                   <br>
-                  <a href="profilModifier.php?ID=<?PHP echo $row['ID']; ?>" class="btn btn-sm btn-outline-blue">Update your profil</a>
+                  
                 </div>
                 
                             </div>

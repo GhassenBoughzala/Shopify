@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="card-footer">
-        <form class="form" method="POST" action="views/ajoutProduit.php">
+        <form class="form" method="POST" action="./views/ajoutProduit.php">
 							<div class="form-body">
                                 <input class=" form-control" style="width: 40%" type="hidden" name="idp" id="idp" >
 								<div class="form-group">
@@ -52,7 +52,7 @@
 									<input class="form-control round" type="text" name="lib_prod" id="lib_prod">
                                     <div class="error-message"></div>
 								</div>
-                                <input class=" form-control" style="width: 40%" type="hidden" name="id" id="id" >
+                                
 								<div class="form-group">
 									<label for="complaintinput2">Price</label>
                                     <input class="form-control round" type="number" name="prix" id="prix">
@@ -67,7 +67,7 @@
 
 								<div class="form-group">
 									<label for="complaintinput4">Image</label>
-									<input class="form-control round" type="file" name="image" required>
+									<input class="form-control round" type="file" name="image" required >
 								</div>
 
 								<div class="form-group">
@@ -79,9 +79,9 @@
 							</div>
 
 							<div class="form-actions">
-                                <input type="submit" value="valider" name="ajouter" class="btn btn-primary" id="ajouterProduit" onclick="notifyMe()" />
+                                <input type="submit" value="Confirm" name="ajouter" class="btn btn-outline-primary" id="ajouterProduit" onclick="notifyMe()" />
                                 
-                                <input type="button"  class="btn btn-theme04" value="Reset" onclick="reset()"/>
+                                <input type="button"  class="btn btn-outline-info" value="Reset" onclick="reset()"/>
 
 							</div>
 						</form>

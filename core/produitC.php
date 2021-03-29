@@ -79,10 +79,10 @@ function afficherProduit ($produit){
         }
 	}
 	function modifierProduit($produit,$idp){
-		$sql="UPDATE produit SET  lib_prod=:lib_prod,prix=:prix,image=:image,description=:description,qte_prod=:qte_prod,id=:id WHERE idp=:idp";
+		$sql="UPDATE produit SET  lib_prod=:lib_prod,prix=:prix,image=:image,description=:description,qte_prod=:qte_prod WHERE idp=:idp";
 		
 		$db = config::getConnexion();
-try{		
+    try{		
         $req=$db->prepare($sql);
 		
         $lib_prod=$produit->getLib_prod();
@@ -91,7 +91,7 @@ try{
         $description=$produit->getDescription();
          $qte_prod=$produit->getQte_prod();
         $id=$produit->getId();
-		$datas = array( ':idp'=>$idp, ':lib_prod'=>$lib_prod,':prix'=>$prix,':image'=>$image,':description'=>$description,':qte_prod'=>$qte_prod,':id'=>$id);
+		$datas = array( ':idp'=>$idp, ':lib_prod'=>$lib_prod,':prix'=>$prix,':image'=>$image,':description'=>$description,':qte_prod'=>$qte_prod);
 		
 		$req->bindValue(':idp',$idp);
 		$req->bindValue(':lib_prod',$lib_prod);
@@ -99,20 +99,20 @@ try{
 		$req->bindValue(':image',$image);
 		$req->bindValue(':description',$description);
         $req->bindValue(':qte_prod',$qte_prod);
-        $req->bindValue(':id',$id);
-		
-		
+        //$req->bindValue(':id',$id);
+			
             $s=$req->execute();
 			
            // header('Location: index.php');
         }
         catch (Exception $e){
             echo " Erreur ! ".$e->getMessage();
-   echo " Les datas : " ;
-  print_r($datas);
+            echo " Les datas : " ;
+            print_r($datas);
         }
 		
 	}
+
 	function recupererProduit($idp){
 		$sql="SELECT * from produit where idp=$idp";
 		$db = config::getConnexion();
@@ -124,6 +124,7 @@ try{
             die('Erreur: '.$e->getMessage());
         }
 	}
+    
     function afficherProduitsEssai(){
 		$sql="SELECT * from produit";
 		$db = config::getConnexion();
