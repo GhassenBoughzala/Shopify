@@ -39,7 +39,7 @@
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
                                             <li><a href="index.php">Home</a></li>
-                                            <li><a href="Catagori.html">Products</a></li>
+                                            <li><a href="products.php">Products</a></li>
                                             <!--  
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
