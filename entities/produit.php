@@ -1,5 +1,6 @@
 <?PHP
 class Produit{
+	
 	private $idp;
 	private $lib_prod;
 	private $id;

@@ -1,5 +1,6 @@
 <?php 
 include 'dbconfig.php';
+
 class User{
 	private $login;
     private $pwd;

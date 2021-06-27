@@ -15,13 +15,11 @@ class client
 
  //public function __construct () {}
 
- public  function __construct($identifiant,$nom,$prenom,$age,$sexe,$adresse,$email,$mdp,$fidelite) {
+ public  function __construct($nom,$prenom,$age,$sexe,$adresse,$email,$mdp) {
      $this->prenom=$prenom;
      $this->nom=$nom;
-     $this->identifiant=$identifiant;
      $this->sexe=$sexe;
      $this->mdp=$mdp;
-     $this->fidelite=$fidelite;
      $this->age=$age;
      $this->adresse=$adresse;
      $this->email=$email;

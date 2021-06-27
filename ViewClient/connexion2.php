@@ -8,9 +8,11 @@ include 'User.php';
 
 $c=new Database();
 $conn=$c->connexion();
+
 $user=new User($_POST['login'],$_POST['pwd'],$conn);
 $u=$user->Logedin($conn,$_POST['login'],$_POST['pwd']);
 $vide=false;
+
 
 if (!empty($_POST['login']) && !empty($_POST['pwd'])){
 	
@@ -27,9 +29,7 @@ if (!empty($_POST['login']) && !empty($_POST['pwd'])){
 
 		
 		}
-		if($_SESSION['l']=="shopify@gmail.com" && $_SESSION['p']=="4567"){
-		header("location:../ViewAdmin");
-		}
+		
 	
 }
 if ($vide==false) { 
