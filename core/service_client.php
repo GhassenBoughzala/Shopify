@@ -70,7 +70,7 @@ class service_client {
         return $liste;
         }
         catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
+            window.alert("You need to Sign In First ");
         }   
     }
 

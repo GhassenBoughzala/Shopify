@@ -38,8 +38,8 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>                                                
                                         <ul id="navigation">                                                                                                                                     
-                                            <li><a href="index.php">Home</a></li>
-                                            <li><a href="products.php">Products</a></li>
+                                            <li><a href="index.php"></a></li>
+                                            
                                             <!--  
                                             <li><a href="#">Pages</a>
                                                 <ul class="submenu">
@@ -53,13 +53,14 @@
                                                 </ul>
                                             </li>
                                             -->
-                                            <li><a href="contact.html">Contact</a></li>
+                                            
                                         </ul>
                                     </nav>
                                 </div>
                             </div> 
                             <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
                                 <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+
                                     <li class="d-none d-lg-block"> <a href="profil.php" class="btn header-btn">Profil</a></li>
                                     <li class="d-none d-lg-block"><a href="logout.php"><i class="fas fa-sign-out-alt fa-2x" style="color:#2577FD" ></i></a></li>
                                 </ul>
@@ -71,7 +72,6 @@
                         </div>
                     </div>
                </div>
-
 
 
 

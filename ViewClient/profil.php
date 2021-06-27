@@ -60,32 +60,40 @@
     <main>
        
         <!-- Latest Offers Start -->
+        
+            <?php
+            include "../core/service_client.php";
+
+            
+
+            
+                
+                
+                // On récupère nos variables de session
+                if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+                { 
+                
+                    $crud= new service_client();
+                    $res=$crud->afficherClientFront($_SESSION['l']);
+                      foreach ($res as $row)
+                    {
+                    ?>
         <div class="latest-wrapper lf-padding">
             <div class="latest-area latest-height d-flex align-items-center" data-background="assets/img/collection/latest-offer.png">
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
                             <div class="latest-caption">
-            <?php
-            include "../core/service_client.php";
-
-            $crud= new service_client();
-            $res=$crud->afficherClientFront($_SESSION['l']);
-            
-            foreach ($res as $row)
-            {
-            ?>
-                  <h2>Profil</h2>                
-                  <h5><?php echo $row['nom']; ?> <?php echo $row['prenom'];?></h5>
-                  <h5>Age:  <?php echo $row['age']; ?></h5>
-                  <h5>Email:  <?php echo $row['email']; ?></h5>
-                  <h5>Adresse:  <?php echo $row['adresse']; ?></h5>
-            <?php }?>
-                  <input type="hidden" value="<?PHP echo $row['identifiant']; ?>" name="identifiant">
+                          <h2>Profil</h2>                
+                          <h5><?php echo $row['nom']; ?> <?php echo $row['prenom'];?></h5>
+                          <h5>Age:  <?php echo $row['age']; ?></h5>
+                          <h5>Email:  <?php echo $row['email']; ?></h5>
+                          <h5>Adresse:  <?php echo $row['adresse']; ?></h5>
+                           <input type="hidden" value="<?PHP echo $row['identifiant']; ?>" name="identifiant">
                   
                   <br>
                   
-                </div>
+                                </div>
                 
                             </div>
                         </div>
@@ -95,7 +103,71 @@
                
             </div>
         </div>
+
+         <section class="category-area section-padding20">
+            <div class="container-fluid">
+                <!-- Section Tittle -->
+                
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="single-category mb-30">
+                            <div class="category-img">
+                                <img src="assets/img/categori/cat1.jpg" alt="">
+                                <div class="category-caption">
+                                    <h2>Owmen`s</h2>
+                                    <span class="best"><a href="products.php">View Products</a></span>
+                                    <span class="collection">New Collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-xl-4 col-lg-6">
+                        <div class="single-category mb-30">
+                            <div class="category-img text-center">
+                                <img src="assets/img/categori/cat2.jpg" alt="">
+                                <div class="category-caption">
+                                    <span class="collection">Discount!</span>
+                                    <h2>Winter Cloth</h2>
+                                   <p>New Collection</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="single-category mb-30">
+                            <div class="category-img">
+                                <img src="assets/img/categori/cat3.jpg" alt="">
+                                <div class="category-caption">
+                                    <h2>Man`s Cloth</h2>
+                                    <span class="best"><a href="products.php">View Products</a></span>
+                                    <span class="collection">New Collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                        
+                    <?php 
+                    }
+                
+                
+                }
+                
+                else { 
+
+                   $PHPtext = "Oops ! You need to Signin at First !";
+                    
+                }    
+               
+            ?>
+
+                 
         <!-- Latest Offers End -->
+
+      
        
 
 
@@ -139,6 +211,12 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
+        <script>
+           var JavaScriptAlert = <?php echo json_encode($PHPtext); ?>;
+            alert(JavaScriptAlert);
+            window.location = 'index.php'; // Your PHP alert! 
+        </script>
+        
         
     </body>
 </html>
